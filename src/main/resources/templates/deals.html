@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/datatable.css">
+<link href="assets/css/style.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<div class="topnav">
+		<a class="active" href="/upload">Home</a>
+		<a class="active" href="/testdata">Generate Test File</a>
+		<div class="search-container">
+			<form th:action="@{/fileinfo}" th:object="${search}">
+				<input type="text" placeholder="Search.." id="search" name="search">
+				<button type="submit">
+					<i class="fa fa-search"></i>
+				</button>
+			</form>
+		</div>
+	</div>
+
+	<div id="wrap">
+		<div class="container">
+			<h3>
+				Search Results for File: <span th:utext="${fileName}">
+			</h3>
+			<table cellpadding="0" cellspacing="0" border="0"
+				class="datatable table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Deal ID</th>
+						<th>Ordering Current Code</th>
+						<th>To Currencey Code</th>
+						<th>Deal Amount</th>
+						<th>Deal Time</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="gradeA" th:each="search : ${search}">
+						<td th:text="${search.dealId}">Text ...</td>
+						<td th:text="${search.orderingCurrencyCode}">Text ...</td>
+						<td th:text="${search.receivingCurrencyCode}">Text ...</td>
+						<td class="center" th:text="${search.dealAmount}">Text ...</td>
+						<td class="center" th:text="${search.dealTime}">Text...</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th>Deal ID</th>
+						<th>Ordering Current Code</th>
+						<th>To Currencey Code</th>
+						<th>Deal Amount</th>
+						<th>Deal Time</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script
+		src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+	<script src="assets/js/datatable.js"></script>
+	<script type="text/javascript">
+		$(document).ready(
+				function() {
+					$('.datatable').dataTable({
+						"sPaginationType" : "bs_four_button"
+					});
+					$('.datatable').each(
+							function() {
+								var datatable = $(this);
+								// SEARCH - Add the placeholder for Search and Turn this into in-line form control
+								var search_input = datatable.closest(
+										'.dataTables_wrapper').find(
+										'div[id$=_filter] input');
+								search_input.attr('placeholder', 'Search');
+								search_input.addClass('form-control input-sm');
+								// LENGTH - Inline-Form control
+								var length_sel = datatable.closest(
+										'.dataTables_wrapper').find(
+										'div[id$=_length] select');
+								length_sel.addClass('form-control input-sm');
+							});
+				});
+	</script>
+
+
+
+</body>
+</html>
+

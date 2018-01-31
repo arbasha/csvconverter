@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>CSV Importer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google web fonts -->
+<link
+	href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700"
+	rel='stylesheet' />
+
+<!-- The main CSS file -->
+<link href="assets/css/style.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+	<div class="topnav">
+		<a class="active" href="/upload">Home</a>
+		<a class="active" href="/testdata">Generate Test File</a>
+		<div class="search-container">
+			<form th:action="@{/fileinfo}" th:object="${search}">
+				<input type="text" placeholder="Search.." id="search" name="search">
+				<button type="submit">
+					<i class="fa fa-search"></i>
+				</button>
+			</form>
+		</div>
+	</div>
+	<br />
+	<br />
+	<!-- 	<div align="center">
+		<br> <br> <br>
+		<div class="text">Simple animated search box</div>
+		<form action="#" th:action="@{/fileinfo}" th:object="${search}">
+			<br> <input class="button" id="search" name="search"
+				placeholder="Search..." />
+		</form>
+		<br /> <br /> <br />
+	</div> -->
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6">
+				<form id="upload" method="post" th:action="@{/upload}"
+					enctype="multipart/form-data">
+					<div id="drop">
+						Drop Here <br /> <a>Browse</a> <input type="file" name="upl" />
+					</div>
+					<ul>
+						<!-- The file uploads will be shown here -->
+					</ul>
+				</form>
+			</div>
+			<div class="col-sm-6">
+				<div class="table-responsive">
+					<table class="table" id="uploaded-files">
+						<thead>
+							<tr>
+								<th>File Name</th>
+								<th># of Imported Deals</th>
+								<th># of Invalid Deals</th>
+								<th>Status</th>
+								<th>DB Process Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				</table>
+			</div>
+		</div>
+		<!-- 	<footer>
+		<h2>
+			<a href="http://tutorialzine.com/2013/05/mini-ajax-file-upload-form/"><i>Tutorial:</i>
+				Mini Ajax File Upload Form</a>
+		</h2>
+		<div id="tzine-actions">
+
+			<a id="tzine-download"
+				href="http://tutorialzine.com/2013/05/mini-ajax-file-upload-form/"
+				title="Download This Example!">Download</a>
+		</div>
+	</footer> -->
+
+		<!-- JavaScript Includes -->
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="assets/js/jquery.knob.js"></script>
+
+		<!-- jQuery File Upload Dependencies -->
+		<script src="assets/js/jquery.ui.widget.js"></script>
+		<script src="assets/js/jquery.iframe-transport.js"></script>
+		<script src="assets/js/jquery.fileupload.js"></script>
+
+		<!-- Our main JS file -->
+		<script src="assets/js/script.js"></script>
+
+
+		<!-- Only used for the demos. Please ignore and remove. -->
+		<!-- 		<script src='https://use.edgefonts.net/amaranth.js'></script> -->
+</body>
+</html>

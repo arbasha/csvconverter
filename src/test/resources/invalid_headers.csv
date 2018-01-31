@@ -1,0 +1,5 @@
+Deal Unique Id, From Currency ISO Code, To Currency ISO Code, Deal timestamp,Invalid,Deal Amount in ordering currency
+100,USD,AUD,10/11/2008 11:05:05,43
+101,USD,AUD,10/11/2008 11:05:05,43
+,USD,AUD,10/11/2008 11:05:05,43
+,USD,AUD,10/11/2008 11:05:05,43

@@ -13,7 +13,7 @@ Application Setup:
             or
 4. Get the jar from https://github.com/arbasha/csvconverter/tree/master/target/csv-converter-0.0.1-SNAPSHOT.jar and execute it with java -jar command
 
-# Home page - http://localhost:8080/
+#URL- http://localhost:8080/
 
 1. Get a csv file with testdata by clicking "Generate Test File" button
 2. Upload the same file (either by Drag & Drop / by clicking Browse button
@@ -21,7 +21,11 @@ Application Setup:
 4. Simultaneously, the table in home page will display the metrics behind that file upload.
 5. "Search" box in top right naviagtion bar, can be used search a file by providing file name.  
 
+# Home Page
 ![index](https://user-images.githubusercontent.com/22431218/35640474-4519a4a6-06e3-11e8-919d-e30da8754c1f.PNG)
 
-
+# File Search Result Page
 ![file_search](https://user-images.githubusercontent.com/22431218/35640911-9db4e430-06e4-11e8-8278-29fe9fc37c3d.PNG)
+
+# UT Coverage
+![cobertura_coverage](https://user-images.githubusercontent.com/22431218/35641662-d0654512-06e6-11e8-8190-add351555334.PNG)
